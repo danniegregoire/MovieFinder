@@ -12,6 +12,13 @@ const PORT = process.env.MFA_PORT || 3080;
 const OMDB_KEY = process.env.MFA_OMDB_KEY;
 const OMDB_URL = 'https://www.omdbapi.com';
 
+if(!OMDB_KEY){
+  console.warn("Could not find MFA_OMDB_KEY environment variable.");
+  console.warn("Please provide a Open Movie Database Key");
+  console.log("Exiting.\n");
+  process.exit(1);
+}
+
 app.use(cors);
 
 app.get("/search",async (req, res) => {
