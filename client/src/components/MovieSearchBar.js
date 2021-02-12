@@ -1,12 +1,12 @@
 import React from 'react';
 import MovieSearchResults from './MovieSearchResults';
 
-const MovieSearchBar = () => {
+const MovieSearchBar = ({movieSearchResults}) => {
 
   return (
     <div>
       Movie Search Bar
-      <MovieSearchResults/>
+      <MovieSearchResults movieSearchResults={movieSearchResults} />
     </div>
   )
 

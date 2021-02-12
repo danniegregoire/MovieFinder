@@ -1,12 +1,17 @@
 import React from 'react';
 import Movie from './Movie';
 
-const MovieSearchResults = () => {
+const MovieSearchResults = ({movieSearchResults}) => {
 
   return (
     <div>
-      Movie Search Results
-      <Movie/>
+      {
+        movieSearchResults.map((movie, index) => {
+          console.log(`Movie Title: ${movie.title}`);
+          return (<Movie key={index} movie={movie} />);
+        })
+      }
+
     </div>
   );
 }

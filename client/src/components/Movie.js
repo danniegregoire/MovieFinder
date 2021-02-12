@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Movie = () => {
+const Movie = ({movie}) => {
   return (
     <div>
-      Movie
+      Title: {movie.title}
     </div>
   );
 }
