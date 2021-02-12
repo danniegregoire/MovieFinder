@@ -3,20 +3,7 @@ import {useState} from 'react';
 import MovieSearchBar from './components/MovieSearchBar';
 
 function App() {
-  const [movieSearchResults, setMovieSearchResults] = useState([
-    {
-      id: 123,
-      title: 'Star Trek'
-    },
-    {
-      id: 456,
-      title: 'Star Wars'
-    },
-    {
-      id:789,
-      title: 'War Games'
-    }
-  ]);
+  const [movieSearchResults, setMovieSearchResults] = useState([]);
 
   let props = {movieSearchResults, setMovieSearchResults};
 
