@@ -19,21 +19,21 @@ if(!OMDB_KEY){
   process.exit(1);
 }
 
-app.use(cors);
+app.use(cors());
 
 app.get("/search",async (req, res) => {
   try{
-    let movieResult = {};
-    let title = encodeURIComponent(req.query.title);
+    let topResult = {};
 
-    if(title){
+    if(req.query.title){
+      let title = encodeURIComponent(req.query.title);
       resp = await axios.get(`${OMDB_URL}/?s=${title}&apikey=${OMDB_KEY}`);
-      movieResult = resp.data.Search[0] || '{}';
+      topResult = resp.data.Search[0] || {};
     }
-    console.log(`Searched for "${title}" - found "${movieResult.Title}"`);
-    res.send(movieResult);
-  }
-  catch(err){
+    console.log(`Searched for "${req.query.title}" - found "${topResult.Title}"`);
+
+    res.send(topResult);
+  } catch(err) {
     res.send({});
     console.warn(`Problem fetching results`)
     console.warn(err);
