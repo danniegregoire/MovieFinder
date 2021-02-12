@@ -7,7 +7,7 @@ const MovieSearchResults = ({movieSearchResults}) => {
     <div>
       {
         movieSearchResults.map((movie, index) => {
-          console.log(`Movie Title: ${movie.title}`);
+          console.log(`Movie Title: ${index} ${movie.Title}`);
           return (<Movie key={index} movie={movie} />);
         })
       }
