@@ -5,11 +5,14 @@
 const express = require('express');
 const axios = require('axios');
 const app = express();
+const cors = require('cors');
 
 // Environment Variables
 const PORT = process.env.MFA_PORT || 3080;
 const OMDB_KEY = process.env.MFA_OMDB_KEY;
 const OMDB_URL = 'https://www.omdbapi.com';
+
+app.use(cors);
 
 app.get("/search",async (req, res) => {
   try{
