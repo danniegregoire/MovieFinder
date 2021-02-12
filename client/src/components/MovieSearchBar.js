@@ -18,11 +18,18 @@ const MovieSearchBar = ({movieSearchResults, setMovieSearchResults}) => {
     setSearchTitle('');
   }
 
+  const clearSearchResults = (e) => {
+    e.preventDefault();
+    setMovieSearchResults([]);
+    return false;
+  }
+
   return (
     <div>
       <form onSubmit={handleSubmit}>
         <input type="text" value={searchTitle} placeholder="Search for a movie title" required onChange={handleChange} />      
         <button onClick={handleSubmit}>SEARCH</button>
+        <button onClick={clearSearchResults}>CLEAR RESULTS</button>
       </form>
       <MovieSearchResults movieSearchResults={movieSearchResults} />
     </div>
