@@ -1,18 +1,16 @@
 import './App.css';
-import {useState} from 'react';
-import MovieSearchBar from '../MovieSearchBar/MovieSearchBar';
+import Header from '../Header/Header';
+import Search from '../Search/Search';
+import Footer from '../Footer/Footer';
 
 function App() {
-  const [movieSearchResults, setMovieSearchResults] = useState([]);
 
-  let props = {movieSearchResults, setMovieSearchResults};
 
   return (
     <div className="App">
-      <header className="App-header">
-        Welcome To Movie Finder
-        <MovieSearchBar {...props} />
-      </header>
+      <Header/>
+      <Search />
+      <Footer/>
     </div>
   );
 }

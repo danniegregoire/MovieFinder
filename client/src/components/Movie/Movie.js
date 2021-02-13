@@ -1,4 +1,5 @@
 import React from 'react';
+import './Movie.css';
 
 const Movie = ({movie}) => {
   return (
@@ -11,7 +12,7 @@ const Movie = ({movie}) => {
       Awards:
       Staring:
       
-      <img src={movie.Poster}/>
+      <img className="poster" src={movie.Poster}/>
     </div>
   );
 }
