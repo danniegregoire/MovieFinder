@@ -1,6 +1,6 @@
 import './App.css';
 import {useState} from 'react';
-import MovieSearchBar from './components/MovieSearchBar';
+import MovieSearchBar from '../MovieSearchBar/MovieSearchBar';
 
 function App() {
   const [movieSearchResults, setMovieSearchResults] = useState([]);

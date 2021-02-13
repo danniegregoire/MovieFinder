@@ -1,5 +1,8 @@
 import React, {useState} from 'react';
-import MovieSearchResults from './MovieSearchResults';
+import MovieSearchResults from '../MovieSearchResults/MovieSearchResults';
+import FontAwesome from 'react-fontawesome';
+import './MovieSearchBar.css';
+
 const axios = require('axios');
 
 const MovieSearchBar = ({movieSearchResults, setMovieSearchResults}) => {
@@ -27,8 +30,11 @@ const MovieSearchBar = ({movieSearchResults, setMovieSearchResults}) => {
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <input type="text" value={searchTitle} placeholder="Search for a movie title" required onChange={handleChange} />      
-        <button onClick={handleSubmit}>SEARCH</button>
+        <div className='text-field-container'>
+          <FontAwesome className="fa-search" name="search" size="2x" />
+          <input className="text-field" type="text" value={searchTitle} placeholder="Search for a movie title" required onChange={handleChange} />      
+          <button className="text-field-button" onClick={handleSubmit}>Search &gt;</button>
+        </div>
         <button onClick={clearSearchResults}>CLEAR RESULTS</button>
       </form>
       <MovieSearchResults movieSearchResults={movieSearchResults} />

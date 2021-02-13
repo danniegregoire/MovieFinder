@@ -1,0 +1,25 @@
+
+.text-field-container{
+  background: #ccc;
+  border-radius: 5px;
+  padding: 0px;
+  width:800px;
+}
+
+.text-field {
+  font-size: 20px;
+  background: #ccc;
+  padding: 10px 10px;
+  width: 670px;
+  border-style: hidden;
+}
+
+.text-field:focus {
+  outline: none;
+}
+
+.text-field-button{
+  padding: 5px;
+  background-color: #f00;
+  margin:0px;
+}
