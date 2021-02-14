@@ -3,7 +3,9 @@ import './Footer.css';
 
 const Footer = () => {
   return (
-    <div className="footer">Footer</div>
+    <div className="footer">
+      <div className='slogan'><b>Movie Finder...</b> Movie searching made easy!</div>
+    </div>
   )
 }
 
