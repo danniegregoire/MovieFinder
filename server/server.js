@@ -29,11 +29,16 @@ app.get("/movies/search",async (req, res) => {
     if(req.query.title){
       let title = encodeURIComponent(req.query.title);
       resp = await axios.get(`${OMDB_URL}/?s=${title}&r=json&apikey=${OMDB_KEY}`);
-      topResult = resp.data.Search[0] || {};
-      console.log(topResult);
+      if(resp.data.Search && resp.data.Search.length > 0){
+        topResult = resp.data.Search[0] || {};
+        console.log(topResult);
+        console.log(`Searched for "${req.query.title}" -> found "${topResult.Title}"`);
+      }
+      else{
+        console.log(`Invalid response for "${req.query.title}"`);
+      }
     }
 
-    console.log(`Searched for "${req.query.title}" -> found "${topResult.Title}"`);
     res.send(topResult);
 
   } catch(err) {
@@ -51,7 +56,7 @@ app.get("/movie/:id", async (req, res) => {
     if(req.params.id){
       let id = encodeURIComponent(req.params.id);
       resp = await axios.get(`${OMDB_URL}/?i=${id}&r=json&apikey=${OMDB_KEY}`);
-      console.log('RESP: '+ resp)
+      console.log(resp)
       movie = resp.data || {};
     }
 
