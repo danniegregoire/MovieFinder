@@ -33,7 +33,7 @@
 }
 
 .text-field {
-  font-size: 2.2em;
+  font-size: 1.8em;
   background: #bbb;
   border-style: hidden; 
   margin-left: 4px;
@@ -63,6 +63,7 @@
 
 .clear-button {
   background-color: #000;
+  border-radius: 5px;  
   display: block;
   margin-left: auto;
   order: 2;
