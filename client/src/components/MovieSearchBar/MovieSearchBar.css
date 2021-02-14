@@ -5,24 +5,40 @@
   left:0px; 
   right:0px; 
   overflow:hidden;
-  background: #ddd;
+  background: #bbb;
   color: #000;
+  padding-left:20px;
+  height: 50px;
+  width: 100%;
+  overflow: hidden;
 }
 
+.searchbar-container {
+  display: flex; 
+  overflow: hidden; 
+  width: 97%;
+  height: 50px;
+}
 
 .text-field-container{
-  background: #ccc;
-  border-radius: 5px;
-  padding: 0px;
-
+  background: #bbb;
+  border-radius: 5px 0px 0px 5px;
+  padding: 2px 4px;
+  border: 1px solid black;
+  margin: 4px 0px;
+  width: 50%;
+  display: flex;
+  height: 35px;
+  overflow: hidden;
 }
 
 .text-field {
   font-size: 2.2em;
-  background: #ccc;
-  padding: 10px 10px;
-  width: 670px;
-  border-style: hidden;
+  background: #bbb;
+  border-style: hidden; 
+  margin-left: 4px;
+  width: 93%;
+  height: 30px;
 }
 
 .text-field:focus {
@@ -30,7 +46,24 @@
 }
 
 .text-field-button{
-  padding: 5px;
+  margin: 4px 0px 0px 0px;
+  padding: 2px 12px;
+  border-style: none;
+  font-family: Arial, Helvetica;
+  font-weight: light;
+  font-size: 1.2em;
+  color: #fff;
+  height: 41px;
+}
+
+.search-button {
   background-color: #f00;
-  margin:0px;
+  border-radius: 0px 5px 5px 0px;
+}
+
+.clear-button {
+  background-color: #000;
+  display: block;
+  margin-left: auto;
+  order: 2;
 }

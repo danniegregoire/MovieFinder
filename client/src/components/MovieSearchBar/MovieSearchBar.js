@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
-import MovieSearchResults from '../MovieSearchResults/MovieSearchResults';
-import FontAwesome from 'react-fontawesome';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import './MovieSearchBar.css';
 
 const axios = require('axios');
@@ -32,11 +32,13 @@ const MovieSearchBar = ({movieSearchResults, setMovieSearchResults}) => {
   return (
     <div className="movie-search-bar">
       <form onSubmit={handleSubmit}>
-        <div className='text-field-container'>
-          <FontAwesome className="fa-search" name="search" size="2x" />
-          <input className="text-field" type="text" value={searchTitle} placeholder="Search for a movie title" required onChange={handleChange} />      
-          <button className="text-field-button" onClick={handleSubmit}>Search &gt;</button>
-          <button onClick={clearSearchResults}>CLEAR RESULTS</button>
+        <div className='searchbar-container'>
+          <div className='text-field-container'>
+            <FontAwesomeIcon icon={faSearch} className="fas fa-search fa-flip-horizontal" size="2x"/>
+            <input className="text-field" type="text" value={searchTitle} placeholder="Search for a movie title" required onChange={handleChange} />      
+          </div>
+          <button className="search-button text-field-button" onClick={handleSubmit}>Search &gt;</button>
+          <button className="clear-button text-field-button" onClick={clearSearchResults}>Clear</button>        
         </div>
       </form>
     </div>
