@@ -1,10 +1,11 @@
 import React from 'react';
 import Movie from '../Movie/Movie';
+import './MovieSearchResults.css';
 
 const MovieSearchResults = ({movieSearchResults}) => {
 
   return (
-    <div>
+    <div className="movie-search-results">
       {
         movieSearchResults.map((movie, index) => {
           console.log(`Movie Title: ${index} ${movie.Title}`);

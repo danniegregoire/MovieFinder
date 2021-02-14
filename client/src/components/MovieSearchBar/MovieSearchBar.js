@@ -16,8 +16,10 @@ const MovieSearchBar = ({movieSearchResults, setMovieSearchResults}) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(`Searching for ${searchTitle}`);
-    let response = await axios.get(`http://localhost:3080/search?title=${searchTitle}`);
-    setMovieSearchResults([...movieSearchResults, response.data]);
+    let searchResponse = await axios.get(`http://localhost:3080/movies/search?title=${encodeURIComponent(searchTitle)}`);
+    let fetchResponse = await axios.get(`http://localhost:3080/movie/${encodeURIComponent(searchResponse.data.imdbID)}`);
+
+    setMovieSearchResults([fetchResponse.data, ...movieSearchResults]);
     setSearchTitle('');
   }
 
@@ -28,16 +30,15 @@ const MovieSearchBar = ({movieSearchResults, setMovieSearchResults}) => {
   }
 
   return (
-    <div>
+    <div className="movie-search-bar">
       <form onSubmit={handleSubmit}>
         <div className='text-field-container'>
           <FontAwesome className="fa-search" name="search" size="2x" />
           <input className="text-field" type="text" value={searchTitle} placeholder="Search for a movie title" required onChange={handleChange} />      
           <button className="text-field-button" onClick={handleSubmit}>Search &gt;</button>
+          <button onClick={clearSearchResults}>CLEAR RESULTS</button>
         </div>
-        <button onClick={clearSearchResults}>CLEAR RESULTS</button>
       </form>
-      <MovieSearchResults movieSearchResults={movieSearchResults} />
     </div>
   );
 }
