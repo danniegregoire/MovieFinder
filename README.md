@@ -1,4 +1,6 @@
-# Movie Finder - A demo React App
+# Movie Finder - A demo React application
+
+![Movie Finder Screen Shot](docs/media/MovieFinderScreenShot.png)
 
 Movie Finder is a demo React application that allows you to search for your favorite movies and get details about it, including its Rotten Tomatoes score.
 
@@ -10,7 +12,7 @@ You can deploy your own instance of Movie Finder by following the below instruct
 
 Movie Finder relies on the Open Movie Database API. In order to run Movie Finder you will need to acquire your own Open Movie Database API key. This is a quick and easy process that begins be filling out the registration at the below link. The FREE key will suffice for most users.
 
-http://www.omdbapi.com/apikey.aspx
+Get your OMDB Key: http://www.omdbapi.com/apikey.aspx
 
 After completing the form, Open Movie Database will email you your own API key.
 
@@ -32,9 +34,10 @@ export MFA_OMDB_KEY="<YOUR_API_KEY>"
 
 ## Start the Movie Finder Server
 
-Within your terminal change into the 'server' directory within the Movie Finder project. Start the Movie Finder API server by entering the following command.
+Within this same terminal change into the 'server' directory within the Movie Finder project. Start the Movie Finder API server by entering the following command.
 
 ```
+npm install
 npm start
 ```
 
@@ -43,6 +46,7 @@ npm start
 Finally, start your local instance of the Movie Finder client. Open a new termainal and change into the 'client' directory of the Movie Finder project. Start the Movie Finder client by entering the following command:
 
 ```
+npm install
 npm start
 ```
 
