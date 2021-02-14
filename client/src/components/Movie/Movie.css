@@ -1,3 +1,62 @@
-.poster {
-  height: 100px;
+.movie-result {
+  border: 3px solid black;
+  height: 210px;
+  margin: 5px 5px 0px 5px;
+  padding: 5px 5px 5px 20px;
+  overflow: hidden;
 }
+
+.movie-result h1{
+  font-size: 2em;
+  margin: 0px;
+  padding: 0px;
+  margin: 5px;
+}
+
+.movie-result p{
+  margin: 8px 5px 0px 0px;
+  padding: 0px;
+  font-size: 1.3em;
+}
+
+.movie-result:after {
+  clear: both;
+}
+
+.movie-year{
+  font-weight: bold;
+  font-size: 1.2em;
+  margin: 0px 8px 0px 0px;
+}
+
+.movie-rating {
+  border: 2px solid black;
+  padding: 0px 1px;
+  font-size: 1em;
+  font-weight: bold;
+  margin-top: 0px;
+  margin: 0px 10px 0px 10px;
+}
+
+.movie-runtime {
+  font-weight: bold;
+  font-size: 1.2em;
+  margin: 0px 8px 0px 8px;
+}
+
+.movie-review {
+  font-weight: bold;
+  font-size: 1.2em;  
+  margin: 0px 8px 0px 8px;
+}
+
+.movie-review img {
+  width: 18px;
+}
+
+.movie-poster {
+  height: 200px;
+  float: left;
+  margin: 5px 15px 5px 0px;
+}
+
