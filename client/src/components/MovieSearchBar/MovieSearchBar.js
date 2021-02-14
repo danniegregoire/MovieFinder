@@ -17,9 +17,12 @@ const MovieSearchBar = ({movieSearchResults, setMovieSearchResults}) => {
     e.preventDefault();
     console.log(`Searching for ${searchTitle}`);
     let searchResponse = await axios.get(`http://localhost:3080/movies/search?title=${encodeURIComponent(searchTitle)}`);
-    let fetchResponse = await axios.get(`http://localhost:3080/movie/${encodeURIComponent(searchResponse.data.imdbID)}`);
-    if( fetchResponse.data.Title){
-      setMovieSearchResults([fetchResponse.data, ...movieSearchResults]);
+    if(searchResponse.data.imdbID){
+      let fetchResponse = await axios.get(`http://localhost:3080/movie/${encodeURIComponent(searchResponse.data.imdbID)}`);
+    
+      if( fetchResponse.data.Title){
+        setMovieSearchResults([fetchResponse.data, ...movieSearchResults]);
+      }
     }
     setSearchTitle('');
   }
