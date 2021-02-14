@@ -39,7 +39,7 @@ const MovieSearchBar = ({movieSearchResults, setMovieSearchResults}) => {
         <div className='searchbar-container'>
           <div className='text-field-container'>
             <FontAwesomeIcon icon={faSearch} className="fas fa-search fa-flip-horizontal" size="2x"/>
-            <input className="text-field" type="text" value={searchTitle} placeholder="Search for a movie title" required onChange={handleChange} />      
+            <input className="text-field" type="text" value={searchTitle} placeholder="Search for a movie title" required onChange={handleChange} autoFocus/>      
           </div>
           <button className="search-button text-field-button" onClick={handleSubmit}>Search &gt;</button>
           <button className="clear-button text-field-button" onClick={clearSearchResults}>Clear</button>        
